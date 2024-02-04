@@ -1,0 +1,55 @@
+.background {
+  background-image: url('https://img.freepik.com/premium-vector/network-connection-structure-concept-hi-tech-future-communication-web-concept-big-data-visualization-3d-rendering_634443-444.jpg?w=826');
+  background-size: contain; /* Para cubrir todo el fondo */
+  background-position: center; /* Para centrar la imagen */
+  height: 100vh; /* Para ocupar toda la altura de la pantalla */
+  display: flex;
+  justify-content: center; /* Para centrar horizontalmente */
+  align-items: center; /* Para centrar verticalmente */
+}
+
+.section-input {
+  backdrop-filter: blur(20px); /* Color de fondo del formulario con transparencia */
+  padding: 35px;
+  color: rgb(24, 24, 24);
+  border-radius: 20px; /* Bordes redondeados */
+  max-width: 300px; /* Ancho máximo del formulario */
+  display: flex; /* Agrega esto para usar flexbox */
+  flex-direction: column; /* Alinear los elementos en columna */
+  justify-content: center; /* Para centrar verticalmente */
+  align-items: center; /* Para centrar horizontalmente */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.502); /* Sombra ligera */
+}
+
+
+.container-input {
+  display: flex; /* Agrega flexbox */
+  flex-direction: column; /* Alinea los elementos en columna */
+  justify-content: center; /* Para centrar verticalmente */
+  align-items: center; /* Para centrar horizontalmente */
+}
+
+.container-input input {
+  width: 100%; /* Establece el ancho al 100% para ocupar todo el espacio disponible */
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.button-create button {
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transición suave */
+  
+}
+
+.button-create button:hover {
+  background-color: #0056b3;
+  
+  /* Color de fondo del botón al pasar el ratón */
+}

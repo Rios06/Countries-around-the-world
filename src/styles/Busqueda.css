@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.search {
+    background-image: url('');
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 260px 0 285px 0;
+  }
+  
+  button {
+    color: #8fb5fd;
+    font-size: 1em;
+    padding: 15px;
+    border-radius: 20px;
+  }
+  
+  button:hover {
+    background-color: #4c61fd;
+  }
+  
+  
+  #dataCountry {
+    list-style: none;
+    padding: 20px 15px; /* Ajusta el espacio interno  */
+    background: rgba(0, 0, 0, 0.3); /* Fondo completamente transparente (negro) con opacidad del 30% */
+    color: azure; /* Color del texto */
+    max-width: 400px; /*  ancho máximo */
+    margin: 20px auto 0; /* Centra cuadro horizontalmente y agrega un margen superior de 20px */
+    border-radius: 8px;
+  }
+  
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  #searchCountryIcon {
+    position: absolute;
+    left: 10px; /* Ajusta la posición del icono según tus preferencias */
+    color: #575758; /* Cambia el color del icono si es necesario */
+  }
+  
+  input[type="text"] {
+    padding-left: 30px; /* Ajusta el espacio a la izquierda del input para el icono */
+    height: 40px; /* Ajusta la altura del input según tus preferencias */
+    font-size: 16px; /* Ajusta el tamaño de la fuente según tus preferencias */
+    border: 1px solid #ccc; /* Ajusta el estilo del borde según tus preferencias */
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /*RUTAS*/
+  
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  li {
+    margin-right: 20px;
+  }
+  
