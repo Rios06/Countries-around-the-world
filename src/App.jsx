@@ -24,7 +24,7 @@ const App = () => {
         <Routes>
          {/* <Route path="/Home" element = {<Home/>}/>*/}
           <Route path="/" element={<BuscarPais country={country} setCode={setCode} />} />
-          <Route path="/create" element={<CreateCountry />} />
+          <Route path="/country/countries" element={<CreateCountry />} />
           <Route path="/update" element={<UpdateCountry />} />
         </Routes>
       </div>
