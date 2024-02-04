@@ -4,8 +4,11 @@ import '../styles/Create.css';
 
 
  export const CreateCountry = () => {
+
+
   return (
     <>
+    
     <CountryCreationForm/>
     </>
   );

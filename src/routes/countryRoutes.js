@@ -1,6 +1,7 @@
 import express from 'express';
 import Country from '../models/CountryModel.js'; 
 
+
 const router = express.Router();
 
 router.post("/countries", (req, res) => {
