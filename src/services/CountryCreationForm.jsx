@@ -1,8 +1,10 @@
-//FORMULARIO DE CREACION DE PAIS
 import { useState } from "react";
 import axios from "axios";
+import { useCountryData } from "./useCountryData";
 
 const CountryCreationForm = () => {
+  const {  country, setCode } = useCountryData();
+
   const [formData, setFormData] = useState({
     code: "",
     name: "",
@@ -12,31 +14,24 @@ const CountryCreationForm = () => {
     languages: "",
   });
 
-  const handleChange = (e) => {
+ 
+  const handleCodeChange = (e) => {
+    const countryCode = e.target.value;
+   setCode(countryCode.toUpperCase());
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      code: countryCode,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const languagesArray = formData.languages.split(",");
-    const languageObjects = languagesArray.map((name) => ({ name }));
-
-    setFormData({
-      ...formData,
-      languages: languageObjects,
-    });
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/country/countries",
-        { ...formData, languages: languageObjects }
-      );
-      console.log("country created", response.data);
+      await axios.post("http://localhost:3000/country/countries", country);
+      console.log("Creado con exito");
     } catch (error) {
-      console.log("mensaje de error", error);
+      console.log("Error al crear", error);
     }
   };
 
@@ -56,44 +51,12 @@ const CountryCreationForm = () => {
               type="text"
               name="code"
               placeholder="Code"
-              value={formData.code}
-              onChange={handleChange}
+              onBlur={handleCodeChange}
             />
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="capital"
-              placeholder="Capital"
-              value={formData.capital}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="continent"
-              placeholder="Continent"
-              value={formData.continent}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="currency"
-              placeholder="Currency"
-              value={formData.currency}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="languages"
-              placeholder="Languages"
-              value={formData.languages}
-              onChange={handleChange}
-            />
+            <input type="text" placeholder="Name" disabled value={country?.name}/>
+            <input type="text" placeholder="Capital" disabled value={country?.capital}/>
+            <input type="text" placeholder="Continent" disabled value={country?.continent?.name}/>
+            <input type="text" placeholder="Currency" disabled value={country?.currency}/>
           </div>
           <div className="button-create">
             <button type="submit">create country</button>
@@ -105,3 +68,4 @@ const CountryCreationForm = () => {
 };
 
 export default CountryCreationForm;
+
