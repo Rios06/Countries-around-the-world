@@ -46,6 +46,7 @@ margin-right: 15px;
     justify-content: center; /* Para centrar verticalmente */
     align-items: center; /* Para centrar horizontalmente */
     padding: 10px 20px 10px 180px;
+    margin-top: -60px;
   }
   
   .container-update {
@@ -106,5 +107,6 @@ margin-right: 15px;
 }
 .section-update h1 {
   font-size: 1.2em;
-  margin-right: 850px;
+  margin-right: px;
+ 
 }
