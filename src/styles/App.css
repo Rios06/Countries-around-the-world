@@ -1,3 +1,13 @@
+.logo {
+width: 100px;
+align-items: center;
+display: flex;
+margin-left: 40px;
+margin-bottom: 20px;
+
+
+}
+
 .menu-container {
     position: fixed;
     left: 0;
