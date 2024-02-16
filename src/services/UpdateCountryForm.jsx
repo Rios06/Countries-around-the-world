@@ -19,18 +19,6 @@ export const UpdateCountryForm = () => {
       fetch(`http://localhost:3000/country/country/${inputValue}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleUpdate = () => {
-    try {
-      fetch(`http://localhost:3000/country/country/${inputValue}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(country),
       })
         .then((response) => response.json())
         .then((data) => setCountry(data));
@@ -39,26 +27,7 @@ export const UpdateCountryForm = () => {
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    const newName = name === "name" ? value : country.name;
-    const newCapital = name === "capital" ? value : country.capital;
-    const newContinent = name === "continent" ? value : country.continent;
-    const newCurrency = name === "currency" ? value : country.currency;
-    const newLanguages = name === "languages" ? value : country.languages;
-
-    setCountry({
-      code: country.code,
-      name: newName,
-      capital: newCapital,
-      continent: newContinent,
-      currency: newCurrency,
-      languages: [...country.languages, newLanguages],
-    });
-  };
-
-  console.log(country);
+  
 
   return (
     <>
@@ -76,52 +45,34 @@ export const UpdateCountryForm = () => {
             placeholder="Code"
             onBlur={(e) => setValue(e.target.value)}
           />
+          <input type="text" placeholder="Name" defaultValue={country.name} />
           <input
-            name="name"
-            type="text"
-            placeholder="Name"
-            defaultValue={country.name}
-            onBlur={handleChange}
-          />
-          <input
-            name="capital"
             type="text"
             placeholder="Capital"
             defaultValue={country.capital}
-            onBlur={handleChange}
           />
           <input
-            name="continent"
             type="text"
             placeholder="Continent"
             defaultValue={country.continent?.name}
-            onBlur={handleChange}
           />
           <input
-            name="currency"
             type="text"
             placeholder="Currency"
             defaultValue={country.currency}
-            onChange={handleChange}
           />
           <input
-            name="languages"
             type="text"
             placeholder="Languages"
             defaultValue={country?.languages?.[0]?.name || ""}
-            onBlur={handleChange}
           />
         </section>
         <div className="button-update">
           <button onClick={handleClick}>Consult</button>
-          <button onClick={handleUpdate}>update country</button>
+          <button>update country</button>
           <button onClick={handleClickDelete}>delete country</button>
         </div>
       </section>
     </>
   );
 };
-
-
-
-

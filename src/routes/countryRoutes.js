@@ -37,13 +37,12 @@ router.delete("/country/:id", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-router.put("/country/:id", (req, res) => {
+router.put("/countries/:id", (req, res) => {
   const { id } = req.params;
-  const body = req.body;
-  Country.updateOne({ code: id }, { $set: body })
+  const { name, age, email } = req.body;
+  Country.updateOne({ _id: id }, { $set: { name, age, email } })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
 
 export default router;
-
