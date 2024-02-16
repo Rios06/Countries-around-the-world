@@ -38,13 +38,7 @@ const CountryCreationForm = () => {
   return (
     <div className="background">
       <div className="section-input">
-        <h1>
-          Create <span>Country</span>{" "}
-        </h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed rerum
-          sapiente cumque ducimus autem in, quos voluptatem
-        </p>
+       <h1>Hola, vista uno</h1>
         <form onSubmit={handleSubmit}>
           <div className="container-input">
             <input
