@@ -1,11 +1,15 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import countryRoute from './src/routes/countryRoutes.js'; 
+import cors from 'cors';
 
 const app = express();
 const port =  3000;
 
 app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
 app.use("/country", countryRoute);
 
 app.get("/", (req, res) => {

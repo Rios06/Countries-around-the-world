@@ -2,9 +2,10 @@ import { UpdateCountryForm } from "./UpdateCountryForm";
 import '../styles/Update.css'
 
 export const UpdateCountry = () => {
+  const countryCode = "AR";
   return (
     <>
-    <UpdateCountryForm/>
+    <UpdateCountryForm countryCode={countryCode}/>
     <div>UpdateCountry</div>
     </>
   );

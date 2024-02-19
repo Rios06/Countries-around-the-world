@@ -53,3 +53,8 @@
   
   /* Color de fondo del botón al pasar el ratón */
 }
+
+.button-create {
+  display: flex;
+  justify-content: center;
+}

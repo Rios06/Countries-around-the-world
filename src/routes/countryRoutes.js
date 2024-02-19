@@ -31,10 +31,10 @@ router.delete("/countries/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
-router.put("/countries/:id", (req, res) => {
+router.put("/countries/:code", (req, res) => {
     const { id } = req.params;
-    const { name, age, email } = req.body;
-    Country.updateOne({ _id: id }, { $set: { name, age, email } })
+    const { code, name, continent, currency, languages } = req.body;
+    Country.updateOne({ _id: id }, { $set: { code, name, continent, currency, languages } })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
