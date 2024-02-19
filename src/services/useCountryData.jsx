@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 
 export const useCountryData = () => {
@@ -11,6 +12,7 @@ export const useCountryData = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log(code);
       if (code) {
         try {
           setIsFetching(true);
@@ -35,7 +37,7 @@ export const useCountryData = () => {
                     }
                   }
                 }`,
-              variables: { code },
+              variables: { code: code },
             }),
           });
 
